@@ -99,7 +99,9 @@ if __name__ == '__main__':
     
     temp = file_url.split("/")
     
-    file_name = str(index) + ". "  + urllib.unquote(temp[len(temp)-1])
+    digits = len(str(total_files))
+    format_str = '%0' + str(digits) + 'd'
+    file_name = format_str % index + ". "  + urllib.unquote(temp[len(temp)-1])
     
 
     #Remove uncessary string at the end of file
