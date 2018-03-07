@@ -10,7 +10,7 @@ if __name__ == '__main__':
   quality = sys.argv[1]
   # folder = sys.argv[2]
 
-  assert quality in ['32','128','320','500','lossless']
+  assert quality in ['32','128','320','500','lossless','best','best_lossy']
   
   mapping = {
     '32' : {
@@ -32,6 +32,14 @@ if __name__ == '__main__':
     'lossless' : {
       'full': 'Lossless',
       'find' : ' [FLAC Lossless]'
+    },
+    'best' : {
+      'full': 'best',
+      'find' : ' [Best Quality]'
+    },
+    'best_lossy' : {
+      'full': 'best_lossy',
+      'find' : ' [Best Lossy]'
     },
   }
 
