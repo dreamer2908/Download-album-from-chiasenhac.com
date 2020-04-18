@@ -72,6 +72,10 @@ casper.then(function() {
     this.thenOpen((download_links[index]), function() {
       //this.echo(this.getTitle()); // display the title of page
       file_urls = this.getElementsAttribute('div#downloadlink2 b a','href');
+	  // early return if no link found
+	  if (file_urls.length == 0) {
+		  return;
+	  }
       var best_lossy_bitrate = 0;
       var best_lossy_link = '';
       var has_lossless = 0;
